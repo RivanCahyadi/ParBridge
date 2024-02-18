@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParBridge - Main Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        .holtwood-one sc-regular {
+            font-family: "Holtwood One SC", serif;
+            font-weight: 400;
+            font-style: normal;
+            }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto Slab", serif;
+            background: url('./img/bg.jpg') center/cover fixed no-repeat;
+            backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
+            color: #0D1321;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #0D1321; /* Game's primary color */
+        }
+
+        p {
+            font-weight: bold; /* Game's primary color */
+        }
+
+        h2 {
+            font-weight: bolder;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.2em;
+            font-weight: bolder;
+            padding: 10px 20px;
+            border: 2px solid #FCAB64; /* Game's primary color */
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #FCD29F; /* Game's primary color */
+            color: #1a1a1a;
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 1em;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            border: 2px solid #FCAB64; /* Game's primary color */
+            border: 2px solid ;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .close {
+            position: absolute;
+            top: 2px;
+            right: 7px;
+            cursor: pointer;
+            color: #FCAB64;
+        }
+        h1 {
+            font-size: 4.5em;
+            margin-bottom: 30px;
+            color: #0D1321; /* Game's primary color */
+            /* Applying the Holtwood One SC font to h1 */
+            font-family: 'Holtwood One SC', serif;
+        }
+
+    </style>
+</head>
+<body>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="./music/mainmenu.mp3" type="audio/mp3">
+    </audio>
+    
+    <div class="container">
+        <h1>ParBridge</h1>
+        <nav>
+            <ul>
+                <li><a href="game.html">Play</a></li>
+                <li><a id="howToPlayBtn" href="#">How to Play</a></li>
+            </ul>
+        </nav>
+        <br>
+        <p class="description">Part Of Cambridge Campus Education Fair!</p>
+    </div>
+
+    <!-- How to Play Popup -->
+    <div id="howToPlayPopup" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>How to Play</h2>
+        <p>Reach the end to win the prize without dying.</p>
+        <p>Don't go to the previous position where the quiz popped up. It will give you another quiz if you do so.</p>
+        <h2>Button</h2>
+        <p>W : Up</p>
+        <p>A : Right</p>
+        <p>D : Left</p>
+    </div>
+
+    <script>
+        // Function to display the popup
+        function openPopup() {
+            document.getElementById("howToPlayPopup").style.display = "block";
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById("howToPlayPopup").style.display = "none";
+        }
+
+        // Event listener for the "How to Play" button
+        document.getElementById("howToPlayBtn").addEventListener("click", openPopup);
+    </script>
+</body>
+</html>
